@@ -11,19 +11,21 @@
         justify-content: center;
         align-items: center;
         height: 700px;
-        background-image: url(https://img.freepik.com/premium-vector/abstract-geometric-polygon-background-wallpaper-header-cover-with-triangle-shape-low-polly-blue_206846-1173.jpg);
+        background-image: url(https://mobimg.b-cdn.net/v3/fetch/6d/6dd4ffa036181246ee107c961b9c8abb.jpeg?h=1400);
         font-size: 20px;
         background-repeat: no-repeat;
         background-size: cover;
         font-family:cursive;
-    }
+    }/*https://mobimg.b-cdn.net/v3/fetch/6d/6dd4ffa036181246ee107c961b9c8abb.jpeg?h=1400
+    https://img.freepik.com/premium-vector/abstract-geometric-polygon-background-wallpaper-header-cover-with-triangle-shape-low-polly-blue_206846-1173.jpg*/
     
     #form{
         padding: 20px;
-        background-clip:content-box;
+        background-clip:border-box;
         width: 600px;
         border: px rgb(255, 255, 255) solid;
         border-radius: 20px;
+        background-color: #00000080;
     }
     .formformat{
         display: flex;
@@ -33,9 +35,10 @@
     .formformat input{
         border-radius:4px ;
         font-size:15px;
-        color: rgb(93, 5, 93);
+        /*color: rgb(93, 5, 93);*/
         background-color: rgb(244, 234, 234);
         height: 18px;
+        color:black;
     }
     .formformat input:focus{
         outline: 0;
@@ -64,11 +67,12 @@
         cursor: pointer;
     }
     label{
-        color: aqua;
+        color:white;
         font-size: larger;
+        opacity: 600%;
     }
     @media only screen and (max-width:600px){
-          body{
+        body{
             display: flex;
             justify-content: center;
             align-items: center;
@@ -78,17 +82,17 @@
             height: 100vh;
             background-image: url(https://img.freepik.com/premium-vector/abstract-geometric-polygon-background-wallpaper-header-cover-with-triangle-shape-low-polly-blue_206846-1173.jpg);
            }
-          .formformat input {
+        .formformat input {
            height: 10px;
            padding: 2px;
            font-size: 12px;
            width: 70%;
            margin-left: 70px;
           }
-          label{
+        label{
             margin-left: 70px;
           }
-          #form{
+        #form{
             padding: 10px;
             width: 100vw;
             border-radius: 20px;
@@ -104,6 +108,7 @@
         border-radius: 20px;
         background-color: transparent;
         border: none;
+        opacity: 100%;
         }
         p{
         color: red;
@@ -159,13 +164,13 @@ form.addEventListener('submit',(e)=>{
 })
 
 function check(){
-   const usernameval = username.value.trim();
-   const emailval = email.value.trim();
-   const passwordval = password.value.trim();
-   const cpasswordval = password2.value.trim();
+   const uval = username.value.trim();
+   const eval = email.value.trim();
+   const pval = password.value.trim();
+   const cpval = password2.value.trim();
    let success=true;
    
-   if(usernameval ===''){
+   if(uval ===''){
     success=false;
     seterror(username,"INVALID")
    }
@@ -173,33 +178,33 @@ function check(){
     setsuccess(username)
    
    }
-   if(!validateemail(emailval)){
+   if(!validateemail(eval)){
     success=false;
     seterror(email,"INVALID")  
    }
-   else if(emailval ===''){
+   else if(eval ===''){
     success=false;
     seterror(email,"INVALID") 
    }
     else{
      setsuccess(email)                 
     }
-   if(passwordval ===''){
+   if(pval ===''){
     success=false;
     seterror(password,"INVALID")              
    }
-   else if(passwordval.length<8){
+   else if(pval.length<8){
     success=false;
     seterror(password,"INVALID")               
    }
    else{
     setsuccess(password)               
    }
-   if(cpasswordval!== passwordval){
+   if(cpval!== pval){
     success=false;
     seterror(password2,"INVALID")               
    }
-   else if(cpasswordval ===''){
+   else if(cpval ===''){
     success=false;
     seterror(password2,"INVALID")              
    }
